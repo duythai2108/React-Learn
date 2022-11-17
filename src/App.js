@@ -1,5 +1,5 @@
 import "./App.css";
-import Game from "./components/tictactoe/Game";
+import Card from "./components/card/Card";
 // JSX: Javascript XML
 // ES6
 // Babel
@@ -7,7 +7,7 @@ import Game from "./components/tictactoe/Game";
 function App() {
   return (
     <div>
-      <Game></Game>
+      <Card></Card>
     </div>
   );
 }
