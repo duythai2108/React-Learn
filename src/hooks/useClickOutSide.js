@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 
 export default function useClickOutSide(dom = "button") {
   const [show, setShow] = useState(false);
-  const nodeRef = useRef(null);
+  const nodeRef = useRef();
   useEffect(() => {
     function handleClickOutSide(e) {
       if (
@@ -18,6 +18,7 @@ export default function useClickOutSide(dom = "button") {
       document.removeEventListener("click", handleClickOutSide);
     };
   }, []);
+
   return {
     show,
     setShow,
