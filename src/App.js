@@ -1,11 +1,13 @@
 import { useState } from "react";
 import "./App.scss";
-import Dropdown from "./components/Dropdown";
+import Form from "./components/form/Form";
+// import Input from "./components/form/Input";
+// import Dropdown from "./components/Dropdown";
 // import Blog from "./components/Blog";
 // import HackerNews from "./components/news/HackerNews";
-import HackerNewsWithHook from "./components/news/HackerNewsWithHook";
-import SidebarMenu from "./components/SidebarMenu";
-import useClickOutSide from "./hooks/useClickOutSide";
+// import HackerNewsWithHook from "./components/news/HackerNewsWithHook";
+// import SidebarMenu from "./components/SidebarMenu";
+// import useClickOutSide from "./hooks/useClickOutSide";
 // import Dropdown from "./components/Dropdown";
 // import Input from "./components/Input";
 // import TextareaAutoResize from "./components/TextareaAutoResize";
@@ -33,18 +35,9 @@ import useClickOutSide from "./hooks/useClickOutSide";
 // Babel
 // parent component
 function App() {
-  // const [show, setShow] = useState(false);
-  const { show, setShow, nodeRef } = useClickOutSide();
   return (
     <div>
-      <button
-        onClick={() => setShow(true)}
-        className="inline-block m-3 p-3 rounded-lg text-white bg-green-300"
-      >
-        Show menu
-      </button>
-      <SidebarMenu show={show} ref={nodeRef}></SidebarMenu>
-      <Dropdown></Dropdown>
+      <Form></Form>
     </div>
   );
 }
