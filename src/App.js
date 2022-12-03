@@ -1,6 +1,10 @@
 import { useState } from "react";
 import "./App.scss";
-import Form from "./components/form/Form";
+import SignUpFormFinal from "./components/form/SignUpFormFinal";
+// import Form from "./components/form/Form";
+// import SignUpForm from "./components/form/SignUpForm";
+// import SignUpFormV2 from "./components/form/SignUpFormV2";
+// import MovieSearchApp from "./components/MovieSearchApp";
 // import Input from "./components/form/Input";
 // import Dropdown from "./components/Dropdown";
 // import Blog from "./components/Blog";
@@ -37,7 +41,7 @@ import Form from "./components/form/Form";
 function App() {
   return (
     <div>
-      <Form></Form>
+      <SignUpFormFinal></SignUpFormFinal>
     </div>
   );
 }
