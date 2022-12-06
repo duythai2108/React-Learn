@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.scss";
 import SignUpFormFinal from "./components/form/SignUpFormFinal";
+import SignUpFormHook from "./components/form/SignUpFormHook";
 // import Form from "./components/form/Form";
 // import SignUpForm from "./components/form/SignUpForm";
 // import SignUpFormV2 from "./components/form/SignUpFormV2";
@@ -41,7 +42,7 @@ import SignUpFormFinal from "./components/form/SignUpFormFinal";
 function App() {
   return (
     <div>
-      <SignUpFormFinal></SignUpFormFinal>
+      <SignUpFormHook></SignUpFormHook>
     </div>
   );
 }
