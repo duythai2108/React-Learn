@@ -1,13 +1,14 @@
-import { Fragment, useState } from "react";
+// import { Fragment, useState } from "react";
 import "./App.scss";
-import Dropdown from "./components/Dropdown";
-import DropdownPortal from "./components/DropdownPortal";
-import SignUpFormFinal from "./components/form/SignUpFormFinal";
-import SignUpFormHook from "./components/form/SignUpFormHook";
 import Modal from "./components/modal/Modal";
-import Game from "./components/tictactoe/Game";
-import Tooltip from "./components/Tooltip";
-import { ErrorBoundary } from "react-error-boundary";
+// import Dropdown from "./components/Dropdown";
+// import DropdownPortal from "./components/DropdownPortal";
+// import SignUpFormFinal from "./components/form/SignUpFormFinal";
+// import SignUpFormHook from "./components/form/SignUpFormHook";
+// import Modal from "./components/modal/Modal";
+// import Game from "./components/tictactoe/Game";
+// import Tooltip from "./components/Tooltip";
+// import { ErrorBoundary } from "react-error-boundary";
 
 // import Form from "./components/form/Form";
 // import SignUpForm from "./components/form/SignUpForm";
@@ -46,19 +47,19 @@ import { ErrorBoundary } from "react-error-boundary";
 // ES6
 // Babel
 // parent component
-function ErrorFallback({ error, resetErrorBoundary }) {
-  return (
-    <div role="alert" className="p-5 bg-red-100">
-      <p className="text-red-600">Khong the lay data do component dang loi</p>
-      <button onClick={resetErrorBoundary}>Try again</button>
-    </div>
-  );
-}
+// function ErrorFallback({ error, resetErrorBoundary }) {
+//   return (
+//     <div role="alert" className="p-5 bg-red-100">
+//       <p className="text-red-600">Khong the lay data do component dang loi</p>
+//       <button onClick={resetErrorBoundary}>Try again</button>
+//     </div>
+//   );
+// }
 
 function App() {
-  const [showModal, setShowModal] = useState(false);
+  // const [showModal, setShowModal] = useState(false);
   return (
-    <Fragment>
+    <div>
       {/* <div className="relaive z-0">
         <Modal open={showModal} handleClose={() => setShowModal(false)}></Modal>
       </div>
@@ -80,11 +81,12 @@ function App() {
       {/* <div className="p-16 mt-16 ml-16">
         <Tooltip text="Hover me">This is a tooltip content</Tooltip>
       </div> */}
-      <ErrorBoundary FallbackComponent={ErrorFallback}>
+      {/* <ErrorBoundary FallbackComponent={ErrorFallback}>
         <Game></Game>
       </ErrorBoundary>
-      <SignUpFormFinal></SignUpFormFinal>
-    </Fragment>
+      <SignUpFormFinal></SignUpFormFinal> */}
+      <Modal open={true} handleClose={() => {}}></Modal>
+    </div>
   );
 }
 export default App;
