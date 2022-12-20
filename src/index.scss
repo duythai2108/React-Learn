@@ -25,6 +25,7 @@
     background-position-x: -200%;
   }
 }
+//css transition group
 .zoom-enter .content {
   opacity: 0;
   transform: scale(0.5);
@@ -40,7 +41,6 @@
   opacity: 0;
   transform: scale(0.5);
 }
-
 // Fade
 
 .fade-enter .tooltip {

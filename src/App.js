@@ -1,6 +1,11 @@
 // import { Fragment, useState } from "react";
+import { useState } from "react";
 import "./App.scss";
 import Modal from "./components/modal/Modal";
+import ModalAdvanced from "./components/modal/ModalAdvanced";
+import ModalBase from "./components/modal/ModalBase";
+import Portal from "./components/Portal";
+import TooltipAdvanced from "./components/tooltip/TooltipAdvanced";
 // import Dropdown from "./components/Dropdown";
 // import DropdownPortal from "./components/DropdownPortal";
 // import SignUpFormFinal from "./components/form/SignUpFormFinal";
@@ -58,34 +63,67 @@ import Modal from "./components/modal/Modal";
 
 function App() {
   // const [showModal, setShowModal] = useState(false);
+  const [openModalBase, setOpenModalBase] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
   return (
-    <div>
-      {/* <div className="relaive z-0">
-        <Modal open={showModal} handleClose={() => setShowModal(false)}></Modal>
-      </div>
+    <div className="p-5 flex justify-center items-center h-screen">
       <button
-        className="p-4 bg-blue-500 text-white rounded-lg"
-        onClick={() => setShowModal(true)}
+        className="p-5 rounded-lg text-white text-center bg-blue-500"
+        onClick={() => setOpenModalBase(true)}
       >
-        Show modal
+        Open modal base
       </button>
-      <div className="relative z-30">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam
-        aspernatur odio nesciunt a alias aliquam consequatur quos. Ex harum
-        laboriosam, cupiditate doloremque consequuntur culpa, tenetur alias sunt
-        dolore cumque dolores.
+      <button
+        className="p-5 rounded-lg text-white text-center bg-blue-500 ml-5"
+        onClick={() => setOpenModal(true)}
+      >
+        Open modal
+      </button>
+      <ModalBase
+        visible={openModalBase}
+        onClose={() => setOpenModalBase(false)}
+      >
+        <div className="bg-white p-10 rounded-lg w-full max-w-[320px]">
+          <TooltipAdvanced title="Tooltip2">This is tooltip 2</TooltipAdvanced>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa in
+          vitae sequi dolor deleniti, illum pariatur, maiores odit fugiat cumque
+          aspernatur voluptatibus dolore non impedit illo quia. Eveniet, porro
+          nulla?
+        </div>
+      </ModalBase>
+      <ModalAdvanced
+        onClose={() => setOpenModal(false)}
+        visible={openModal}
+        heading="Welcome back !"
+        bodyClassName="w-full max-w-[400px] bg-white p-10 rounded-lg"
+      >
+        <div className="flex flex-col gap-3 mb-5">
+          <label htmlFor="email" className="text-sm cursor-pointer">
+            Email address
+          </label>
+          <input
+            type="text "
+            className="w-full text-sm leading-normal bg-[#E7ECF3] rounded-lg p-4"
+            placeholder="Enter your email"
+          />
+        </div>
+        <div className="flex flex-col gap-3 mb-5">
+          <label htmlFor="password" className="text-sm cursor-pointer">
+            Password
+          </label>
+          <input
+            type="password "
+            className="w-full text-sm leading-normal bg-[#E7ECF3] rounded-lg p-4"
+            placeholder="Enter your password"
+          />
+        </div>
+        <button className="w-full p-4 text-base font-semibold text-white bg-[#316BFF] rounded-lg">
+          Sign in
+        </button>
+      </ModalAdvanced>
+      <div className="inline-block ml-5">
+        <TooltipAdvanced title="Tooltip">This is a tooltip</TooltipAdvanced>
       </div>
-      <div className="overflow-hidden p-5">
-        <DropdownPortal></DropdownPortal>
-      </div> */}
-      {/* <div className="p-16 mt-16 ml-16">
-        <Tooltip text="Hover me">This is a tooltip content</Tooltip>
-      </div> */}
-      {/* <ErrorBoundary FallbackComponent={ErrorFallback}>
-        <Game></Game>
-      </ErrorBoundary>
-      <SignUpFormFinal></SignUpFormFinal> */}
-      <Modal open={true} handleClose={() => {}}></Modal>
     </div>
   );
 }
